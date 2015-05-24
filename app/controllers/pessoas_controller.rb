@@ -26,10 +26,12 @@ class PessoasController < ApplicationController
   def create
     @pessoa = Pessoa.new(pessoa_params)
 
+
     respond_to do |format|
       if @pessoa.save
         format.html { redirect_to @pessoa, notice: 'Pessoa was successfully created.' }
         format.json { render :show, status: :created, location: @pessoa }
+        renda_familiar @pessoa
       else
         format.html { render :new }
         format.json { render json: @pessoa.errors, status: :unprocessable_entity }
@@ -44,6 +46,7 @@ class PessoasController < ApplicationController
       if @pessoa.update(pessoa_params)
         format.html { redirect_to @pessoa, notice: 'Pessoa was successfully updated.' }
         format.json { render :show, status: :ok, location: @pessoa }
+        renda_familiar @pessoa
       else
         format.html { render :edit }
         format.json { render json: @pessoa.errors, status: :unprocessable_entity }
@@ -69,6 +72,27 @@ class PessoasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pessoa_params
-      params.require(:pessoa).permit(:nome, :tipo, :sexo, :data_nascimento, :telefone, :papel, :nacionalidade, :raca, :estado_civil, :ocupacao, :salario, :informacoes, :responsavel)
+      params.require(:pessoa).permit(:nome, :tipo, :sexo, :data_nascimento, :telefone, :papel, :nacionalidade, :raca, :estado_civil, :ocupacao, :salario, :informacoes, :responsavel, :familium_id)
+    end
+
+    def renda_familiar(pessoa)
+      familium = Familium.find(pessoa.familium_id)
+      pessoas = Pessoa.where(:familium_id => pessoa.familium_id)
+      renda = 0
+
+      pessoas.each do |p|
+        renda += p.salario
+      end
+      familium.renda = renda / pessoas.length
+
+      if renda <= 77
+        familium.enquadramento = "Extrema pobreza"
+      elsif renda <=154
+        familium.enquadramento = "Pobreza"
+      else
+        familium.enquadramento = "Outros"
+      end
+
+      familium.save
     end
 end

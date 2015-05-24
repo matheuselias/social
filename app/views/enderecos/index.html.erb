@@ -13,6 +13,7 @@
       <th>Numero</th>
       <th>Cep</th>
       <th>Telefone</th>
+      <th>Familia</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +29,7 @@
         <td><%= endereco.numero %></td>
         <td><%= endereco.cep %></td>
         <td><%= endereco.telefone %></td>
+        <td><%= endereco.familium_id %></td>
         <td><%= link_to 'Show', endereco %></td>
         <td><%= link_to 'Edit', edit_endereco_path(endereco) %></td>
         <td><%= link_to 'Destroy', endereco, method: :delete, data: { confirm: 'Are you sure?' } %></td>

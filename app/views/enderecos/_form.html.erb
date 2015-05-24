@@ -43,6 +43,10 @@
     <%= f.label :telefone %><br>
     <%= f.text_field :telefone %>
   </div>
+  <div class="field">
+    <%= f.label :familia %>
+    <%= f.collection_select(:familium_id, Familium.all, :id, :nome) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

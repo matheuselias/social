@@ -27,6 +27,8 @@ class FamiliaController < ApplicationController
     @familium = Familium.new(familium_params)
 
     respond_to do |format|
+      @familium.enquadramento = "Outros"
+      @familium.renda = 0
       if @familium.save
         format.html { redirect_to @familium, notice: 'Familium was successfully created.' }
         format.json { render :show, status: :created, location: @familium }
