@@ -62,7 +62,11 @@
 
 <p>
   <strong>Responsavel:</strong>
-  <%= @pessoa.responsavel %>
+  <% if @pessoa.responsavel %>
+    Sim
+  <% else %>
+    Não
+  <% end %>
 </p>
 
 <p>

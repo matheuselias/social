@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :sexo %><br>
-    <%= f.text_field :sexo %>
+    <%= select(:pessoa, :sexo, [['Masculino', 'masculino'], ['Feminino',  'feminino']]) %>
   </div>
   <div class="field">
     <%= f.label :data_nascimento %><br>
@@ -40,12 +40,12 @@
     <%= f.text_field :nacionalidade %>
   </div>
   <div class="field">
-    <%= f.label :raca %><br>
+    <%= f.label :raça %><br>
     <%= f.text_field :raca %>
   </div>
   <div class="field">
     <%= f.label :estado_civil %><br>
-    <%= f.text_field :estado_civil %>
+    <%= select(:pessoa, :estado_civil, [['Solteiro(a)', 'solteiro'], ['Casado(a)',  'casado'],['Divorciado(a)', 'divorciado'], ['Viúvo(a)', 'viuvo']]) %>
   </div>
   <div class="field">
     <%= f.label :ocupacao %><br>

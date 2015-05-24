@@ -38,7 +38,12 @@
         <td><%= pessoa.ocupacao %></td>
         <td><%= pessoa.salario %></td>
         <td><%= pessoa.informacoes %></td>
-        <td><%= pessoa.responsavel %></td>
+        <td> <% if pessoa.responsavel %>
+                    Sim
+                  <% else %>
+                    Não
+                  <% end %>
+        </td>
         <td><%= pessoa.familium_id %><td>
         <td><%= link_to 'Show', pessoa %></td>
         <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>

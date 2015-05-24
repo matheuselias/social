@@ -6,10 +6,10 @@
   <thead>
     <tr>
       <th>Tipo</th>
-      <th>Endereco</th>
+      <th>Estado</th>
       <th>Cidade</th>
       <th>Bairro</th>
-      <th>Estado</th>
+      <th>Endereco</th>
       <th>Numero</th>
       <th>Cep</th>
       <th>Telefone</th>
@@ -22,10 +22,10 @@
     <% @enderecos.each do |endereco| %>
       <tr>
         <td><%= endereco.tipo %></td>
-        <td><%= endereco.endereco %></td>
+        <td><%= endereco.estado %></td>
         <td><%= endereco.cidade %></td>
         <td><%= endereco.bairro %></td>
-        <td><%= endereco.estado %></td>
+         <td><%= endereco.endereco %></td>
         <td><%= endereco.numero %></td>
         <td><%= endereco.cep %></td>
         <td><%= endereco.telefone %></td>
