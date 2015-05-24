@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @pessoa.nome %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @pessoa.tipo %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @pessoa.sexo %>
+</p>
+
+<p>
+  <strong>Data nascimento:</strong>
+  <%= @pessoa.data_nascimento %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @pessoa.telefone %>
+</p>
+
+<p>
+  <strong>Papel:</strong>
+  <%= @pessoa.papel %>
+</p>
+
+<p>
+  <strong>Nacionalidade:</strong>
+  <%= @pessoa.nacionalidade %>
+</p>
+
+<p>
+  <strong>Raca:</strong>
+  <%= @pessoa.raca %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @pessoa.estado_civil %>
+</p>
+
+<p>
+  <strong>Ocupacao:</strong>
+  <%= @pessoa.ocupacao %>
+</p>
+
+<p>
+  <strong>Salario:</strong>
+  <%= @pessoa.salario %>
+</p>
+
+<p>
+  <strong>Informacoes:</strong>
+  <%= @pessoa.informacoes %>
+</p>
+
+<p>
+  <strong>Responsavel:</strong>
+  <%= @pessoa.responsavel %>
+</p>
+
+<%= link_to 'Edit', edit_pessoa_path(@pessoa) %> |
+<%= link_to 'Back', pessoas_path %>

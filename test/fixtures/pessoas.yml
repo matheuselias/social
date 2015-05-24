@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  tipo: MyString
+  sexo: MyString
+  data_nascimento: 2015-05-24
+  telefone: MyString
+  papel: MyString
+  nacionalidade: MyString
+  raca: MyString
+  estado_civil: MyString
+  ocupacao: MyString
+  salario: 9.99
+  informacoes: MyText
+  responsavel: false
+
+two:
+  nome: MyString
+  tipo: MyString
+  sexo: MyString
+  data_nascimento: 2015-05-24
+  telefone: MyString
+  papel: MyString
+  nacionalidade: MyString
+  raca: MyString
+  estado_civil: MyString
+  ocupacao: MyString
+  salario: 9.99
+  informacoes: MyText
+  responsavel: false

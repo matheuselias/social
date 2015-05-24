@@ -1,0 +1,69 @@
+<%= form_for(@pessoa) do |f| %>
+  <% if @pessoa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+
+      <ul>
+      <% @pessoa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br>
+    <%= f.text_field :sexo %>
+  </div>
+  <div class="field">
+    <%= f.label :data_nascimento %><br>
+    <%= f.date_select :data_nascimento %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br>
+    <%= f.text_field :telefone %>
+  </div>
+  <div class="field">
+    <%= f.label :papel %><br>
+    <%= f.text_field :papel %>
+  </div>
+  <div class="field">
+    <%= f.label :nacionalidade %><br>
+    <%= f.text_field :nacionalidade %>
+  </div>
+  <div class="field">
+    <%= f.label :raca %><br>
+    <%= f.text_field :raca %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_civil %><br>
+    <%= f.text_field :estado_civil %>
+  </div>
+  <div class="field">
+    <%= f.label :ocupacao %><br>
+    <%= f.text_field :ocupacao %>
+  </div>
+  <div class="field">
+    <%= f.label :salario %><br>
+    <%= f.text_field :salario %>
+  </div>
+  <div class="field">
+    <%= f.label :informacoes %><br>
+    <%= f.text_area :informacoes %>
+  </div>
+  <div class="field">
+    <%= f.label :responsavel %><br>
+    <%= f.check_box :responsavel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
