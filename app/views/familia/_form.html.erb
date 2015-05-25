@@ -32,25 +32,10 @@
   <div class="control-group">
     <%= f.label :inforcacoes, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :inforcacoes, :class => 'form-control' %>
+      <%= f.text_area :inforcacoes, :class => 'form-control' %>
     </div>
     <%= error_span(@familium[:inforcacoes]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :renda, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :renda, :class => 'form-control' %>
-    </div>
-    <%= error_span(@familium[:renda]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :enquadramento, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :enquadramento, :class => 'form-control' %>
-    </div>
-    <%= error_span(@familium[:enquadramento]) %>
-  </div>
-
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

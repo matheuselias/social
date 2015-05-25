@@ -74,7 +74,7 @@
   <div class="control-group">
     <%= f.label :familium_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :familium_id, :class => 'form-control' %>
+      <%= f.collection_select(:familium_id, Familium.all, :id, :nome) %>
     </div>
     <%= error_span(@endereco[:familium_id]) %>
   </div>

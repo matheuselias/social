@@ -40,7 +40,13 @@
         <td><%= pessoa.ocupacao %></td>
         <td><%= pessoa.salario %></td>
         <td><%= pessoa.informacoes %></td>
-        <td><%= pessoa.responsavel %></td>
+        <td>
+          <% if pessoa.responsavel %>
+            Sim
+          <% else %>
+            Não
+          <% end %>
+        </td>
         <td><%= pessoa.familium_id %></td>
         <td><%=l pessoa.created_at %></td>
         <td>

@@ -29,7 +29,13 @@
   <dt><strong><%= model_class.human_attribute_name(:informacoes) %>:</strong></dt>
   <dd><%= @pessoa.informacoes %></dd>
   <dt><strong><%= model_class.human_attribute_name(:responsavel) %>:</strong></dt>
-  <dd><%= @pessoa.responsavel %></dd>
+  <dd>
+  <% if @pessoa.responsavel %>
+    Sim
+  <% else %>
+    Não
+  <% end %>
+  </dd>
   <dt><strong><%= model_class.human_attribute_name(:familium_id) %>:</strong></dt>
   <dd><%= @pessoa.familium_id %></dd>
 </dl>

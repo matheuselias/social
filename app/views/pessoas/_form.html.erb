@@ -25,21 +25,21 @@
   <div class="control-group">
     <%= f.label :tipo, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :tipo, :class => 'form-control' %>
+      <%= select(:pessoa, :tipo, [['Fisica', 'fisica'], ['Juridica',  'juridica']]) %>
     </div>
     <%= error_span(@pessoa[:tipo]) %>
   </div>
   <div class="control-group">
     <%= f.label :sexo, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :sexo, :class => 'form-control' %>
+      <%= select(:pessoa, :sexo, [['Masculino', 'masculino'], ['Feminino',  'feminino']]) %>
     </div>
     <%= error_span(@pessoa[:sexo]) %>
   </div>
   <div class="control-group">
     <%= f.label :data_nascimento, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :data_nascimento, :class => 'form-control' %>
+      <%= f.date_select :data_nascimento %>
     </div>
     <%= error_span(@pessoa[:data_nascimento]) %>
   </div>
@@ -74,7 +74,7 @@
   <div class="control-group">
     <%= f.label :estado_civil, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :estado_civil, :class => 'form-control' %>
+      <%= select(:pessoa, :estado_civil, [['Solteiro(a)', 'solteiro'], ['Casado(a)',  'casado'],['Divorciado(a)', 'divorciado'], ['Viúvo(a)', 'viuvo']]) %>
     </div>
     <%= error_span(@pessoa[:estado_civil]) %>
   </div>
@@ -95,21 +95,21 @@
   <div class="control-group">
     <%= f.label :informacoes, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :informacoes, :class => 'form-control' %>
+      <%= f.text_area :informacoes, :class => 'form-control' %>
     </div>
     <%= error_span(@pessoa[:informacoes]) %>
   </div>
   <div class="control-group">
     <%= f.label :responsavel, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :responsavel, :class => 'form-control' %>
+      <%= f.check_box :responsavel %>
     </div>
     <%= error_span(@pessoa[:responsavel]) %>
   </div>
   <div class="control-group">
     <%= f.label :familium_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :familium_id, :class => 'form-control' %>
+      <%= f.collection_select(:familium_id, Familium.all, :id, :nome)  %>
     </div>
     <%= error_span(@pessoa[:familium_id]) %>
   </div>
