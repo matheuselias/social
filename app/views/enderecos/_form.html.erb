@@ -1,53 +1,87 @@
-<%= form_for(@endereco) do |f| %>
-  <% if @endereco.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@endereco.errors.count, "error") %> prohibited this endereco from being saved:</h2>
+<%= form_for @endereco, :html => { :class => "form-horizontal endereco" } do |f| %>
 
-      <ul>
-      <% @endereco.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @endereco.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@endereco.errors.count, "error") %> prohibited this endereco from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @endereco.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
+  <div class="control-group">
+    <%= f.label :tipo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tipo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:tipo]) %>
   </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.text_field :estado %>
+  <div class="control-group">
+    <%= f.label :endereco, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :endereco, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:endereco]) %>
   </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <%= f.text_field :cidade %>
+  <div class="control-group">
+    <%= f.label :cidade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cidade, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:cidade]) %>
   </div>
-  <div class="field">
-    <%= f.label :bairro %><br>
-    <%= f.text_field :bairro %>
+  <div class="control-group">
+    <%= f.label :bairro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bairro, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:bairro]) %>
   </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
+  <div class="control-group">
+    <%= f.label :estado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :estado, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:estado]) %>
   </div>
-  <div class="field">
-    <%= f.label :numero %><br>
-    <%= f.number_field :numero %>
+  <div class="control-group">
+    <%= f.label :numero, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :numero, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:numero]) %>
   </div>
-  <div class="field">
-    <%= f.label :cep %><br>
-    <%= f.text_field :cep %>
+  <div class="control-group">
+    <%= f.label :cep, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cep, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:cep]) %>
   </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
+  <div class="control-group">
+    <%= f.label :telefone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefone, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:telefone]) %>
   </div>
-  <div class="field">
-    <%= f.label :familia %>
-    <%= f.collection_select(:familium_id, Familium.all, :id, :nome) %>
+  <div class="control-group">
+    <%= f.label :familium_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :familium_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@endereco[:familium_id]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            enderecos_path, :class => 'btn btn-default' %>
+
 <% end %>

@@ -1,73 +1,122 @@
-<%= form_for(@pessoa) do |f| %>
-  <% if @pessoa.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+<%= form_for @pessoa, :html => { :class => "form-horizontal pessoa" } do |f| %>
 
-      <ul>
-      <% @pessoa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @pessoa.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @pessoa.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+  <div class="control-group">
+    <%= f.label :nome, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:nome]) %>
   </div>
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
+  <div class="control-group">
+    <%= f.label :tipo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tipo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:tipo]) %>
   </div>
-  <div class="field">
-    <%= f.label :sexo %><br>
-    <%= select(:pessoa, :sexo, [['Masculino', 'masculino'], ['Feminino',  'feminino']]) %>
+  <div class="control-group">
+    <%= f.label :sexo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sexo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:sexo]) %>
   </div>
-  <div class="field">
-    <%= f.label :data_nascimento %><br>
-    <%= f.date_select :data_nascimento %>
+  <div class="control-group">
+    <%= f.label :data_nascimento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :data_nascimento, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:data_nascimento]) %>
   </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
+  <div class="control-group">
+    <%= f.label :telefone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefone, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:telefone]) %>
   </div>
-  <div class="field">
-    <%= f.label :papel %><br>
-    <%= f.text_field :papel %>
+  <div class="control-group">
+    <%= f.label :papel, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :papel, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:papel]) %>
   </div>
-  <div class="field">
-    <%= f.label :nacionalidade %><br>
-    <%= f.text_field :nacionalidade %>
+  <div class="control-group">
+    <%= f.label :nacionalidade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nacionalidade, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:nacionalidade]) %>
   </div>
-  <div class="field">
-    <%= f.label :raça %><br>
-    <%= f.text_field :raca %>
+  <div class="control-group">
+    <%= f.label :raca, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :raca, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:raca]) %>
   </div>
-  <div class="field">
-    <%= f.label :estado_civil %><br>
-    <%= select(:pessoa, :estado_civil, [['Solteiro(a)', 'solteiro'], ['Casado(a)',  'casado'],['Divorciado(a)', 'divorciado'], ['Viúvo(a)', 'viuvo']]) %>
+  <div class="control-group">
+    <%= f.label :estado_civil, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :estado_civil, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:estado_civil]) %>
   </div>
-  <div class="field">
-    <%= f.label :ocupacao %><br>
-    <%= f.text_field :ocupacao %>
+  <div class="control-group">
+    <%= f.label :ocupacao, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ocupacao, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:ocupacao]) %>
   </div>
-  <div class="field">
-    <%= f.label :salario %><br>
-    <%= f.text_field :salario %>
+  <div class="control-group">
+    <%= f.label :salario, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :salario, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:salario]) %>
   </div>
-  <div class="field">
-    <%= f.label :informacoes %><br>
-    <%= f.text_area :informacoes %>
+  <div class="control-group">
+    <%= f.label :informacoes, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :informacoes, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:informacoes]) %>
   </div>
-  <div class="field">
-    <%= f.label :responsavel %><br>
-    <%= f.check_box :responsavel %>
+  <div class="control-group">
+    <%= f.label :responsavel, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :responsavel, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:responsavel]) %>
   </div>
-  <div class="field">
-    <%= f.label :familia %>
-    <%= f.collection_select(:familium_id, Familium.all, :id, :nome) %>
+  <div class="control-group">
+    <%= f.label :familium_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :familium_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pessoa[:familium_id]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            pessoas_path, :class => 'btn btn-default' %>
+
 <% end %>
