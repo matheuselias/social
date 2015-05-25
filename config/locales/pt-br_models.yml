@@ -1,0 +1,16 @@
+pt-BR:
+    activerecord:
+        models:
+            pessoa: Pessoa
+            endereco: Endereco
+            familium: Familia
+        attributes:
+            pessoa:
+                id: "Código"
+                created_at: "Criado em"
+            endereco:
+                id: "Código"
+                created_at: "Criado em"
+            familium:
+                id: "Código"
+                created_at: "Criado em"

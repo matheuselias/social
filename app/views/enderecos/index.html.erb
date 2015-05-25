@@ -32,7 +32,7 @@
         <td><%= endereco.cep %></td>
         <td><%= endereco.telefone %></td>
         <td><%= endereco.familium_id %></td>
-        <td><%=l endereco.created_at %></td>
+        <td><%= endereco.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_endereco_path(endereco), :class => 'btn btn-default btn-xs' %>
